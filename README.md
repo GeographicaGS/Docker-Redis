@@ -10,12 +10,12 @@ Usage Pattern
 -------------
 Build the image directly from GitHub (this can take a while):
 
-    docker build -t="geographica/postgresql-9.1.2-postgis-1.5.8"
-	https://github.com/GeographicaGS/Docker-PostgreSQL-9.1.2-PostGIS-1.5.8.git
+    docker build -t="geographica/redis:2.8.14"
+    https://github.com/GeographicaGS/Docker-Redis.git
 
 or pull it from Docker Hub:
 
-    docker pull geographica/postgresql-9.1.2-postgis-1.5.8
+    docker pull geographica/redis:2.8.14
 
 Create a folder in the host to contain the data storage. We like to persist the
 data storage in the host and not in the container:
@@ -44,4 +44,3 @@ where we can start the server with:
     redis-server /data/redis.conf
 
 and inspect the database with __redis_cli__.
-
