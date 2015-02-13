@@ -32,7 +32,9 @@ container:
 
 In this case, the container will retain control of the console, and, when exited
 with __Ctrl-C__, will perform a clean shutdown of the database. The host can
-check the Redis log on the host data storage.
+check the Redis log on the host data storage. The default run command will seek
+for __redis.conf__ in the __/data__ folder. Keep in mind that some configuration
+on __redis.conf__ will be needed, like for example the __dir__ directive.
 
 Also we can access it in interactive mode:
 
