@@ -27,8 +27,8 @@ __redis.conf__, keeping in mind that the __dir__ directive should point to
 __/data__, the mount point in the container for the data storage. To start the
 container:
 
-    docker run -t -i -p 6379:6379 -v /whatever/redis-2.8.14/:/data/
-    geographica/redis:2.8.14
+    docker run -t -i --name="redis" -p 6379:6379
+    -v /whatever/redis-2.8.14/:/data/ geographica/redis:2.8.14
 
 In this case, the container will retain control of the console, and, when exited
 with __Ctrl-C__, will perform a clean shutdown of the database. The host can
@@ -36,7 +36,7 @@ check the Redis log on the host data storage.
 
 Also we can access it in interactive mode:
 
-    docker run -t -i -p 6379:6379 -v /whatever/redis-2.8.14/:/data/
+    docker run --rm -t -i -p 6379:6379 -v /whatever/redis-2.8.14/:/data/
     geographica/redis:2.8.14 /bin/bash
 
 where we can start the server with:
